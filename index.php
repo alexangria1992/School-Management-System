@@ -1,42 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="fontawesome-free-5.14.0-web/fontawesome-free-5.14.0-web/css/all.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>iSchool</title>
-    </head>
-  <body>
-    <!-- Start Navigation -->
-        <nav class="navbar navbar-expand-sm navbar-dark  pl-5 fixed-top">
-            <a class="navbar-brand" href="index.php">iSchool</a>
-            <span class="navbar-text">Learn and Implement</span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul class="navbar-nav custom-nav pl-5">
-                    <li class="nav-item custom-nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Courses</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Payment</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">My Profile</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Logout</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Login</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Signup</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Feedback</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Contact</a></li>
-                </ul>
-        </div>
-    </nav>
-
+<?php
+include("./mainInclude/header.php");
+?>
     <!-- start video background--> 
     <div class="container-fluid remove-vid-marg">
         <div class="vid-parent">
@@ -48,7 +12,9 @@
         <div class="vid-content">
             <h1 class="my-content">Welcome to iSchool</h1>
             <small class="my-content">Learn and Implement</small><br>
-            <a href="" class="btn btn-danger">Get Started</a>
+            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#stuRegModalCenter">Get Started</a>
+                   <!-- Button trigger modal -->
+
         </div>
     </div>
 
@@ -69,10 +35,174 @@
             </div>
         </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Popular course</h1>
+            <div class="card-deck mt-4">
+                <a href="" class="btn" style="text-align: left; padding:0px; margin:0px">
+                  <div class="card">
+                      <img src="image/courseimg/Guitar.jpg" alt="Guitar" class="card-img-top"/>
+                      <div class="card-body">
+                          <h5 class="card-title">Learn Guitar Easy Way</h5>
+                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
+                      </div>
+                      <div class="card-footer">
+                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
+                            <span class="font-weight-bolder">&#8377 200</span>
+                          </p>
+                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                      </div>
+                  </div>
+                </a>
+                <a href="" class="btn" style="text-align: left; padding:0px; margin:0px">
+                  <div class="card">
+                      <img src="image/courseimg/Guitar.jpg" alt="Guitar" class="card-img-top"/>
+                      <div class="card-body">
+                          <h5 class="card-title">Learn Guitar Easy Way</h5>
+                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
+                      </div>
+                      <div class="card-footer">
+                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
+                            <span class="font-weight-bolder">&#8377 200</span>
+                          </p>
+                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                      </div>
+                  </div>
+                </a>
+                <a href="" class="btn" style="text-align: left; padding:0px; margin:0px">
+                  <div class="card">
+                      <img src="image/courseimg/Guitar.jpg" alt="Guitar" class="card-img-top"/>
+                      <div class="card-body">
+                          <h5 class="card-title">Learn Guitar Easy Way</h5>
+                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
+                      </div>
+                      <div class="card-footer">
+                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
+                            <span class="font-weight-bolder">&#8377 200</span>
+                          </p>
+                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                      </div>
+                  </div>
+                </a>
+            </div>
+            <div class="card-deck mt-4">
+                <a href="" class="btn" style="text-align: left; padding:0px">
+                  <div class="card">
+                      <img src="image/courseimg/Python.jpg" alt="Python" class="card-img-top"/>
+                      <div class="card-body">
+                          <h5 class="card-title">Learn Python Easy Way</h5>
+                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
+                      </div>
+                      <div class="card-footer">
+                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
+                            <span class="font-weight-bolder">&#8377 200</span>
+                          </p>
+                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                      </div>
+                  </div>
+                </a>
+                <a href="" class="btn" style="text-align: left; padding:0px">
+                  <div class="card">
+                      <img src="image/courseimg/Python.jpg" alt="Python" class="card-img-top"/>
+                      <div class="card-body">
+                          <h5 class="card-title">Learn Guitar Easy Way</h5>
+                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
+                      </div>
+                      <div class="card-footer">
+                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
+                            <span class="font-weight-bolder">&#8377 200</span>
+                          </p>
+                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                      </div>
+                  </div>
+                </a>
+                <a href="" class="btn" style="text-align: left; padding:0px">
+                  <div class="card">
+                      <img src="image/courseimg/Python.jpg" alt="Python" class="card-img-top"/>
+                      <div class="card-body">
+                          <h5 class="card-title">Learn Guitar Easy Way</h5>
+                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
+                      </div>
+                      <div class="card-footer">
+                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
+                            <span class="font-weight-bolder">&#8377 200</span>
+                          </p>
+                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                      </div>
+                  </div>
+                </a>
+            </div>
+            <div class="text-center m-2">
+                <a href="" class="btn-danger btn-sm">View All Courses</a>
+            </div>
+    </div>
+    <?php
+    include("./contact.php");
+    ?>
+    <div class="container-fluid mt-5" style="background-color: #4B7289" id="Feedback">
+    <h1 class="text-center testyheading p-4">Student's Feedback</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="testimonial-slider" class="owl-carousel">
+                <div class="testimonial">
+                    <p class="description">
+                    Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo
+                    </p>
+                    <div class="pic">
+                        <img src="image/stu/student2.jpg" alt="">
+                    </div>
+                    <div class="testimonial-prof">
+                        <h4>Sonam</h4>
+                        <small>Web Developper</small>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-danger">
+        <div class="row text-white text-center p-1">
+            <div class="col-sm">
+                <a href="" class="text-white social-hover"><i class="fab fa-facebook-f"></i>Facebook</a>
+            </div>
+            <div class="col-sm">
+                  <a href="" class="text-white social-hover"><i class="fab fa-twitter"></i>Twitter</a>
+            </div>
+            <div class="col-sm">
+                  <a href="" class="text-white social-hover"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+            </div>
+            <div class="col-sm">
+                  <a href="" class="text-white social-hover"><i class="fab fa-instagram"></i>instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-4" style="background-color: #E9ECEF">
+        <div class="container" style="background-color: #E9ECEF">
+            <div class="row text-center">
+                <div class="col-sm">
+                    <h5>About Us</h5>
+                    <p>iSchool provides universal access to the worlds best education, partnering with top universities and organisations to offer courses online.</p>
+                </div>
+                <div class="col-sm">
+                    <h5>Category</h5>
+                    <a href="" class="text-dark">Web Development</a><br/>
+                    <a href="" class="text-dark">Web Designing</a><br/>
+                    <a href="" class="text-dark">Android App Dev</a><br/>
+                    <a href="" class="text-dark">iOS Development</a><br/>
+                    <a href="" class="text-dark">Data Analysis</a><br/>
+
+                </div>
+                <div class="col-sm">
+                    <h5>Contact Us</h5>
+                    <p>ischool Pvt Ltd <br> Near Police Camp II <br> Bokaroa, Jharkhand <br> Ph. 0000000 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<?php
+include ("./mainInclude/footer.php");
+?>
