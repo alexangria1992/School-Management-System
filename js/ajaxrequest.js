@@ -1,3 +1,43 @@
+$(document).ready(function(){
+    //Ajax call form already exists email verification
+    $("#stuemail").on("keypress blur", function(){
+        var reg = /^[A-Z-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        var stuemail = $("#stuemail").val();
+
+        $.ajax({
+            url: 'Student/addstudent.php',
+            method: "POST",
+            data: {
+                checkemail: "checkmail",
+                stuemail: stuemail,
+            },
+            success:function(data){
+                if(data != 0)
+                {
+                    $("#statusMsg2").html('<small style="color:red;"> Email ID already used !</small>')
+                    $("#signup").attr("disabled", true);
+
+                } else if (data == 0 && reg.test(stuemail))
+                {
+                    $("#statusMsg2").html('<small style="color:green;"> There You Go !</small>')
+                    $("#signup").attr("disabled", false);
+                }
+                else if(!reg.test(stuemail))
+                {
+                    $("#statusMsg2").html('<small style="color:red;"> Please enter valid email e.g example@mail.com !</small>')
+                    $("#signup").attr("disabled", false);
+                }
+                if(stuemail == "")
+                {
+                    $("#statusMsg2").html('<small style="color:red;"> Please Enter Email !</small>')
+                }
+            }
+        })
+    })
+})
+
+
+
 function addStu()
 {
     var reg = /^[A-Z-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
