@@ -113,3 +113,37 @@ function clearStuRegField()
 
     
 }
+
+//Ajax Call for Student Login Verification //
+
+function checkStuLogin()
+{
+   var stuLogEmail = $("#stuLogEmail").val()
+   var  stuLogPass = $("#stuLogPass").val()
+    $.ajax({
+        url: 'Student/addstudent.php',
+        method: "POST",
+        data: {
+            checkLogemail: "checklogemail",
+            stuLogEmail: stuLogEmail,
+            stuLogPass: stuLogPass
+
+        },
+        success: function(data){
+            if(data == 0)
+            {
+                $("#statusLogMsg").html("<small class='alert alert-danger'> Inavlid Email ID or Password!</small>")
+            }
+            else if(data == 1)
+            {
+                $("#statusLogMsg").html('<div class="spinner-border text-success" role="status"></div>');
+                setTimeout(()=>{
+                    window.location.href="Student/userProfile.php";
+                }, 1000)
+            }
+        }
+
+    })
+
+
+}

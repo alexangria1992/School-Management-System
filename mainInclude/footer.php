@@ -51,59 +51,26 @@
         <form id="stuLoginForm">
     
         <div class="form-group">
-            <i class="fas fa-envelope"></i><label for="stuLogemail" class="pl-2 font-weight-bold">Email</label>
-            <input type="email" class="form-control" id="stuLogemail" name="stuLogemail" placeholder="Email">
+            <i class="fas fa-envelope"></i><label for="stuLogEmail" class="pl-2 font-weight-bold">Email</label>
+            <input type="email" class="form-control" id="stuLogEmail" name="stuLogEmail" placeholder="Email">
         </div>
         <div class="form-group">
             <i class="fas fa-key"></i><label for="stuLogpass" class="pl-2 font-weight-bold">Password</label>
-            <input type="password" class="form-control" id="stuLogpass" name="stuLogpass" placeholder="Password">
+            <input type="password" class="form-control" id="stuLogPass" name="stuLogPass" placeholder="Password">
            
         </div> 
         </form>        
         </div>
         <div class="modal-footer">
-             <button type="button" class="btn btn-primary" id="studentLoginBtn">Login</button>
+        <small id="statusLogMsg"></small>
+             <button type="button" class="btn btn-primary" id="studentLoginBtn" onclick="checkStuLogin()">Login</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
         </div>
     </div>
     </div>
 
-           <!-- start student login-->
-  
 
-    <div class="modal fade" id="stuLoginModalCenter" tabindex="-1" role="dialog" aria-labelledby="stuLoginModalCenterLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="stuLoginModalCenterLabel">Student Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-        <!-- Start Student Login Form -->
-
-        <form id="stuLoginForm">
-    
-        <div class="form-group">
-            <i class="fas fa-envelope"></i><label for="stuLogemail" class="pl-2 font-weight-bold">Email</label>
-            <input type="email" class="form-control" id="stuLogemail" name="stuLogemail" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <i class="fas fa-key"></i><label for="stuLogpass" class="pl-2 font-weight-bold">Password</label>
-            <input type="password" class="form-control" id="stuLogpass" name="stuLogpass" placeholder="Password">
-           
-        </div> 
-        </form>        
-        </div>
-        <div class="modal-footer">
-             <button type="button" class="btn btn-primary" id="studentLoginBtn">Login</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        </div>
-        </div>
-    </div>
-    </div>
 
     <!-- Admin login-->
     <div class="modal fade" id="adminLoginModalCenter" tabindex="-1" role="dialog" aria-labelledby="adminLoginModalCenterLabel" aria-hidden="true">
@@ -116,23 +83,23 @@
             </button>
         </div>
         <div class="modal-body">
-        <!-- Start Student Login Modal -->
+        <!-- Start Admin Login Modal -->
 
         <form id="adminLoginForm">
     
         <div class="form-group">
-            <i class="fas fa-envelope"></i><label for="adminLogemail" class="pl-2 font-weight-bold">Email</label>
-            <input type="email" class="form-control" id="adminLogemail" name="adminLogemail" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <i class="fas fa-key"></i><label for="adminLogpass" class="pl-2 font-weight-bold">Password</label>
-            <input type="password" class="form-control" id="adminLogpass" name="adminLogpass" placeholder="Password">
-           
-        </div> 
+                <i class="fas fa-envelope"></i><label for="adminLogEmail" class="pl-2 font-weight-bold">Email</label>
+                <input type="email" class="form-control" placeholder="Email" name="adminLogEmail" id="adminLogEmail">
+                </div>
+                <div class="form-group">
+                  <i class="fas fa-key"></i><label for="adminLogPass" class="pl-2 font-weight-bold">Password</label>
+                  <input type="password" class="form-control" placeholder="Password" name="adminLogPass" id="adminLogPass">
+                </div>
         </form>        
         </div>
         <div class="modal-footer">
-             <button type="button" class="btn btn-primary" id="adminLoginBtn">Login</button>
+              <small id="statusAdminLogMsg"></small>
+              <button type="button" class="btn btn-primary" id="adminLoginBtn" onclick="checkAdminLogin()">Login</button>
              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
         </div>
@@ -146,5 +113,7 @@
     <script src="js/owl.min.js" type="text/javascript"></script>
     <script src="js/testyslider.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/ajaxrequest.js"></script>
+    <script type="text/javascript" src="js/adminajaxrequest.js"></script>
+
   </body>
 </html>

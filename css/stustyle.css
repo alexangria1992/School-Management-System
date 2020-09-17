@@ -2,9 +2,14 @@
   font-family: "Ubuntu", sans-serif;
   font-size: 2em;
   font-weight: bold;
-  color: #fff;
+  color: black !important;
 }
 .active {
-  background-color: #225470;
+  background-color: #225470 !;
   color: #fff;
+}
+
+.navbar
+{
+  background-color: blue !important;
 }

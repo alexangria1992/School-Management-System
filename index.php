@@ -1,5 +1,5 @@
 <?php
-include("./mainInclude/header.php");
+include("./mainInclude/header.php")
 ?>
     <!-- start video background--> 
     <div class="container-fluid remove-vid-marg">
@@ -12,7 +12,18 @@ include("./mainInclude/header.php");
         <div class="vid-content">
             <h1 class="my-content">Welcome to iSchool</h1>
             <small class="my-content">Learn and Implement</small><br>
-            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#stuRegModalCenter">Get Started</a>
+
+            <?php
+                if(!isset($_SESSION['is_login']))
+                {
+                    echo ' <a href="" class="btn btn-danger mt-3" data-toggle="modal" data-target="#stuRegModalCenter">Get Started</a>';
+                }
+                else 
+                {
+                      echo '<a href="" class="btn btn-primary mt-3">My Profile</a></li>';
+                }
+            ?>
+           
                    <!-- Button trigger modal -->
 
         </div>
