@@ -19,7 +19,7 @@ include("./mainInclude/header.php");
             </div>
             <div>
                 <input type="submit" class="btn btn-primary mx-4" value="View">
-         `   </div>
+              </div>
             </div>
         </form>
     </div>
