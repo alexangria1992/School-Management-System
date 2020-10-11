@@ -35,7 +35,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="adminDashboard.php" class="nav-link">
+                        <a href="students.php" class="nav-link">
                             <i class="fas fa-users"></i> Students
                         </a>
                     </li>
@@ -50,7 +50,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="adminDashboard.php" class="nav-link">
+                        <a href="adminChangePass.php" class="nav-link">
                             <i class="fas fa-key"></i> Change Password
                         </a>
                     </li>
