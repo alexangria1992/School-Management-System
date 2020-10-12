@@ -30,7 +30,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="lessons.php" class="nav-link">
                             <i class="fab fa-accessible-icon"></i> Lessons
                         </a>
                     </li>
