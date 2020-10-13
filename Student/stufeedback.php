@@ -52,7 +52,20 @@ if(isset($_SESSION['is_login'])){
 <div class="col-sm-6 mt-5">
     <form method="POST" enctype="multipart/form-data" class="mx-5">
         <div class="form-group">
-            
+            <label for="stuId">Student Id</label>
+            <input type="text" id="stuId" name="stuId" class="form-control"
+            value="<?php if(isset($stuId)){echo $stuId;} ?>" readonly>
         </div>
+        <div class="form-group">
+            <label for="f_content">Write Feedback:</label>
+            <textarea class="form-control" id="f_content" name="f_content" row=2></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" name="submitFeedbackBtn">Submit</button>
+        <?php if(isset($passmsg)){echo $passmsg;} ?>
     </form>
 </div>
+</div>
+
+<?php
+include('./stuInclude/footer.php'); 
+?>
