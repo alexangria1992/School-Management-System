@@ -1,3 +1,25 @@
+
+<?php
+include_once("../dbConnection.php");
+if(!isset($_SESSION))
+{
+    session_start();
+}
+
+
+if(isset($_SESSION['is_login'])){
+    $stuLogEmail = $_SESSION['stuLogEmail'];
+    } else {
+    echo "<script> location.href='../index.php'; </script>";
+   }
+
+   if(isset($stuLogEmail)){
+   $sql = "SELECT stu_img FROM student WHERE stu_email='$stuLogEmail'";
+   $result = $conn->query($sql);
+   $row = $result->fetch_assoc();
+   $stu_img = $row['stu_img'];
+   }
+?> 
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,14 +27,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="fontawesome-free-5.14.0-web/fontawesome-free-5.14.0-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../fontawesome-free-5.14.0-web/fontawesome-free-5.14.0-web/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
 
-     <link rel="stylesheet" type="text/css" href="css/owl.min.css">
-    <link href="css/owl.theme.min.css" type="text/css" rel="stylesheet">
-    <link href="css/testyslider.css" type="text/css" rel="stylesheet"> 
-    <link href="css/style.css" type="text/css" rel="stylesheet">
-    <link href="../css/stustyle.css" type="text/css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="../css/owl.min.css">
+    <link href="css/owl.theme.min.css" type="text/css" rel="../stylesheet">
+    <link href="css/testyslider.css" type="text/css" rel="../stylesheet"> 
+    <link href="css/style.css" type="text/css" rel="../stylesheet">
+    <link href="../css/stustyle.css" type="text/css" rel="../stylesheet">
 
 
     <!-- Bootstrap CSS -->
@@ -21,34 +43,46 @@
     </head>
   <body>
     <!-- Start Navigation -->
-        <nav class="navbar navbar-expand-sm navbar-dark  pl-5 fixed-top">
-            <a class="navbar-brand" href="index.php">iSchool</a>
-            <span class="navbar-text">Learn and Implement</span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul class="navbar-nav custom-nav pl-5">
-                    <li class="nav-item custom-nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item custom-nav-item"><a href="courses.php" class="nav-link">Courses</a></li>
-                    <li class="nav-item custom-nav-item"><a href="paymentstatus.php" class="nav-link">Payment Status</a></li>
-                    <?php
-                      session_start();
-                      if(isset($_SESSION['is_login']))
-                      {
-                        echo '<li class="nav-item custom-nav-item"><a href="" class="nav-link">My Profile</a></li>
-                        <li class="nav-item custom-nav-item"><a href="../logout.php" class="nav-link">Logout</a></li>';
-                      }
-                      else {
-                        echo '  <li class="nav-item custom-nav-item"><a href="" class="nav-link" data-toggle="modal" data-target="#stuLoginModalCenter">Login</a></li>
-                        <li class="nav-item custom-nav-item"><a href="" class="nav-link" data-toggle="modal" data-target="#stuRegModalCenter"> Signup</a></li>';
-                      }
-                    ?>
-                    
-                  
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Feedback</a></li>
-                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Contact</a></li>
-                </ul>
-        </div>
-    </nav>
+        <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow" style="background-color: #225470;">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="userProfile.php">E-Learning</a>
+       </nav>
+
+       <!-- side bar -->
+      <div class="container-fluid mb-5" style="margin-top: 40px;">
+        <div class="row">
+          <nav class="col-sm-2 bg-light sidebar py-5 d-print-none">
+            <div class="sidebar-sticky">
+              <ul class="nav flex-column">
+                <li class="nav-item mb-3">
+                  <img src="<?php echo $stu_img ?>" alt="studentimage" class="img-thumbnail rounded-circle">
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link <?php if(PAGE == 'profile'){echo 'active';} ?>" href="userProfile.php">
+                  <i class="fas fa-user"></i>Profile <span class="sr-only">(current)</span>
+                 </a> 
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="myCourse.php">
+                  <i class="fab fa-accessible-icon"></i>My Courses 
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="stufeedback.php">
+                  <i class="fab fa-accessible-icon"></i>Feedback 
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="stuChangePass.php">
+                  <i class="fas fa-key"></i>Change Password 
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../logout.php">
+                  <i class="fas fa-sign-out-alt"></i>Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+       
+        

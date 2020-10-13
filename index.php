@@ -20,7 +20,7 @@ include("./mainInclude/header.php")
                 }
                 else 
                 {
-                      echo '<a href="" class="btn btn-primary mt-3">My Profile</a></li>';
+                      echo '<a href="Student/userProfile.php" class="btn btn-primary mt-3">My Profile</a></li>';
                 }
             ?>
            

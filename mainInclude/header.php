@@ -35,7 +35,7 @@
                       session_start();
                       if(isset($_SESSION['is_login']))
                       {
-                        echo '<li class="nav-item custom-nav-item"><a href="" class="nav-link">My Profile</a></li>
+                        echo '<li class="nav-item custom-nav-item"><a href="Student/userProfile.php" class="nav-link">My Profile</a></li>
                         <li class="nav-item custom-nav-item"><a href="logout.php" class="nav-link">Logout</a></li>';
                       }
                       else {

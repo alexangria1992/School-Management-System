@@ -72,7 +72,7 @@ include('../dbConnection.php');
            echo '<meta http-equiv="refresh" content= "0;URL=?deleted" />';
            } else {
              echo "Unable to Delete Data";
-           } 
+           }  
      } 
    } 
   }?>
