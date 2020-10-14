@@ -1,5 +1,6 @@
 <?php
-include("./mainInclude/header.php")
+include("./mainInclude/header.php");
+include("./dbConnection.php");
 ?>
     <!-- start video background--> 
     <div class="container-fluid remove-vid-marg">
@@ -50,101 +51,75 @@ include("./mainInclude/header.php")
     <div class="container mt-5">
         <h1 class="text-center">Popular course</h1>
             <div class="card-deck mt-4">
-                <a href="" class="btn" style="text-align: left; padding:0px; margin:0px">
-                  <div class="card">
-                      <img src="image/courseimg/Guitar.jpg" alt="Guitar" class="card-img-top"/>
-                      <div class="card-body">
-                          <h5 class="card-title">Learn Guitar Easy Way</h5>
-                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
-                      </div>
-                      <div class="card-footer">
-                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
-                            <span class="font-weight-bolder">&#8377 200</span>
-                          </p>
-                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
-                      </div>
-                  </div>
-                </a>
-                <a href="" class="btn" style="text-align: left; padding:0px; margin:0px">
-                  <div class="card">
-                      <img src="image/courseimg/Guitar.jpg" alt="Guitar" class="card-img-top"/>
-                      <div class="card-body">
-                          <h5 class="card-title">Learn Guitar Easy Way</h5>
-                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
-                      </div>
-                      <div class="card-footer">
-                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
-                            <span class="font-weight-bolder">&#8377 200</span>
-                          </p>
-                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
-                      </div>
-                  </div>
-                </a>
-                <a href="" class="btn" style="text-align: left; padding:0px; margin:0px">
-                  <div class="card">
-                      <img src="image/courseimg/Guitar.jpg" alt="Guitar" class="card-img-top"/>
-                      <div class="card-body">
-                          <h5 class="card-title">Learn Guitar Easy Way</h5>
-                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
-                      </div>
-                      <div class="card-footer">
-                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
-                            <span class="font-weight-bolder">&#8377 200</span>
-                          </p>
-                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
-                      </div>
-                  </div>
-                </a>
+                <?php
+                    $sql = "SELECT * FROM course LIMIT 3";
+                    $result = $conn->query($sql);
+                    if($result->num_rows > 0)
+                    {
+                        while($row = $result->fetch_assoc())
+                        {
+                            $course_id = $row['course_id'];
+                            echo '
+                            <a href="" class="btn" style="text-align: left; padding:0px; margin:0px">
+                            <div class="card">
+                                <img src="'.str_replace('..', '.', $row['course_img']).'" alt="Guitar" class="card-img-top"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$row['course_name'].'</h5>
+                                    <p class="card-text">'.$row['course_desc'].'</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-text d-inline">Price: <small><del>& #8377 '.$row['course_original_price'].'</del></small>
+                                        <span class="font-weight-bolder">&#8377 '.$row['course_original_price'].'</span>
+                                    </p>
+                                    <a href="coursedetails.php?course_id='.$course_id.'" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                                </div>
+                            </div>
+                            </a>
+                            
+                            ';
+                        }
+                    }
+                ?>
+                
+         
             </div>
+
             <div class="card-deck mt-4">
-                <a href="" class="btn" style="text-align: left; padding:0px">
-                  <div class="card">
-                      <img src="image/courseimg/Python.jpg" alt="Python" class="card-img-top"/>
-                      <div class="card-body">
-                          <h5 class="card-title">Learn Python Easy Way</h5>
-                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
-                      </div>
-                      <div class="card-footer">
-                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
-                            <span class="font-weight-bolder">&#8377 200</span>
-                          </p>
-                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
-                      </div>
-                  </div>
-                </a>
-                <a href="" class="btn" style="text-align: left; padding:0px">
-                  <div class="card">
-                      <img src="image/courseimg/Python.jpg" alt="Python" class="card-img-top"/>
-                      <div class="card-body">
-                          <h5 class="card-title">Learn Guitar Easy Way</h5>
-                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
-                      </div>
-                      <div class="card-footer">
-                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
-                            <span class="font-weight-bolder">&#8377 200</span>
-                          </p>
-                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
-                      </div>
-                  </div>
-                </a>
-                <a href="" class="btn" style="text-align: left; padding:0px">
-                  <div class="card">
-                      <img src="image/courseimg/Python.jpg" alt="Python" class="card-img-top"/>
-                      <div class="card-body">
-                          <h5 class="card-title">Learn Guitar Easy Way</h5>
-                          <p class="card-text">Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo.</p>
-                      </div>
-                      <div class="card-footer">
-                          <p class="card-text d-inline">Price: <small><del>& #8377 2000</del></small>
-                            <span class="font-weight-bolder">&#8377 200</span>
-                          </p>
-                          <a href="" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
-                      </div>
-                  </div>
-                </a>
+                <?php
+                    $sql = "SELECT * FROM course LIMIT 3, 3";
+                    $result = $conn->query($sql);
+                    if($result->num_rows > 0)
+                    {
+                        while($row = $result->fetch_assoc())
+                        {
+                            $course_id = $row['course_id'];
+                            echo '
+                            <a href="" class="btn" style="text-align: left; padding:0px; margin:0px">
+                            <div class="card">
+                                <img src="'.str_replace('..', '.', $row['course_img']).'" alt="Guitar" class="card-img-top"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$row['course_name'].'</h5>
+                                    <p class="card-text">'.$row['course_desc'].'</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-text d-inline">Price: <small><del>& #8377 '.$row['course_original_price'].'</del></small>
+                                        <span class="font-weight-bolder">&#8377 '.$row['course_original_price'].'</span>
+                                    </p>
+                                    <a href="coursedetails.php?course_id='.$course_id.'" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                                </div>
+                            </div>
+                            </a>
+                            
+                            ';
+                        }
+                    }
+                ?>
+                
+         
             </div>
+            
             <div class="text-center m-2">
-                <a href="" class="btn-danger btn-sm">View All Courses</a>
+                <a href="courses.php" class="btn-danger btn-sm">View All Courses</a>
             </div>
     </div>
     <?php
@@ -155,18 +130,33 @@ include("./mainInclude/header.php")
     <div class="row">
         <div class="col-md-12">
             <div id="testimonial-slider" class="owl-carousel">
+                <?php
+                    $sql = "SELECT s.stu_name, s.stu_occ, s.stu_img, f.f_content FROM student AS s JOIN feedback AS f ON s.stu_id = f.stu_id";
+                    $result = $conn->query($sql);
+                    if($result->num_rows > 0)
+                    {
+                        while($row = $result->fetch_assoc())
+                        {
+                            $s_img = $row['stu_img'];
+                            $n_img = str_replace('..', '.', $s_img);
+                        
+                    
+                ?>
                 <div class="testimonial">
                     <p class="description">
-                    Lorem ipsum dolor sit aet consectetur adiprsicing elit. Facilis, nemo
+                        <?php echo $row['f_content']; ?>
                     </p>
                     <div class="pic">
-                        <img src="image/stu/student2.jpg" alt="">
+                        <img src="<?php echo $n_img?>" alt="">
                     </div>
                     <div class="testimonial-prof">
-                        <h4>Sonam</h4>
-                        <small>Web Developper</small>
+                        <h4><?php echo $row['stu_name']?></h4>
+                        <small><?php echo $row['stu_occ'] ?></small>
                          </div>
                     </div>
+                      <?php  }
+                    } ?>
+                  
                 </div>
             </div>
         </div>

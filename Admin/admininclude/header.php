@@ -45,7 +45,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="adminDashboard.php" class="nav-link">
+                        <a href="feedback.php" class="nav-link">
                             <i class="fab fa-accessible-icon"></i> Feedback
                         </a>
                     </li>
